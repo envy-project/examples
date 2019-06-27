@@ -1,7 +1,7 @@
 environment:
   base:
     image: golang:stretch
-  project-dir: /go/src/github.com/envy-project/envy/examples/golang
+  project-dir: /go/src/github.com/envy-project/examples/golang-hello-world
 actions:
   - name: build
     script: 'go build hello.go'
