@@ -1,0 +1,22 @@
+environment:
+  base:
+    image: node:stretch-slim
+  setup-steps:
+    - name: npm install
+      type: script
+      run:
+        - "npm install"
+      triggers:
+        files:
+          - package.json
+          - package-lock.json
+actions:
+  - name: lint
+    script: 'node_modules/.bin/eslint *.js'
+    help: 'lint the project'
+  - name: run
+    script: 'node hello.js'
+    help: 'run the project'
+  - name: npm
+    script: 'npm'
+    help: 'run npm'
