@@ -1,0 +1,22 @@
+environment:
+  base:
+    image: ruby:stretch
+  setup-steps:
+    - name: bundle
+      type: script
+      run:
+        - "bundle install"
+      triggers:
+        files:
+          - Gemfile
+          - Gemfile.lock
+actions:
+  - name: lint
+    script: 'rubocop'
+    help: 'lint the project'
+  - name: run
+    script: 'ruby hello.rb'
+    help: 'run the project'
+  - name: bundle
+    script: 'bundle'
+    help: 'run bundler'
