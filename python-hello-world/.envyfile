@@ -1,0 +1,25 @@
+environment:
+  base:
+    image: python:3.7.3-slim-stretch
+  setup-steps:
+    - name: pipenv
+      type: script
+      run:
+        - "pip3 install pipenv"
+    - name: python-deps
+      type: script
+      run:
+        - "pipenv install -d"
+      triggers:
+        files:
+          - Pipfile
+          - Pipfile.lock
+        steps:
+          - pipenv
+actions:
+  - name: lint
+    script: 'pipenv run pylint hello.py'
+    help: 'lint the project'
+  - name: run
+    script: 'pipenv run python3 hello.py'
+    help: 'run the project'
