@@ -5,7 +5,7 @@ environment:
     - name: npm install
       type: script
       run:
-        - "npm install"
+        - "npm install --dev"
       triggers:
         files:
           - package.json
