@@ -3,6 +3,7 @@ environment:
     image: node:stretch-slim
   setup-steps:
     - name: npm install
+      label: "Installing NPM packages"
       type: script
       run:
         - "npm install --dev"
