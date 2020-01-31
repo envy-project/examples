@@ -3,10 +3,12 @@ environment:
     image: python:3.7.3-slim-stretch
   setup-steps:
     - name: pipenv
+      label: "Installing pipenv"
       type: script
       run:
         - "pip3 install pipenv"
     - name: python-deps
+      label: "Installing python dependencies"
       type: script
       run:
         - "pipenv install -d"

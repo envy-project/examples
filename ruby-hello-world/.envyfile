@@ -3,6 +3,7 @@ environment:
     image: ruby:stretch
   setup-steps:
     - name: bundle
+      label: "Installing ruby gems"
       type: script
       run:
         - "bundle install"
