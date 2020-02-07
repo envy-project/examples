@@ -1,0 +1,8 @@
+environment:
+  system-packages:
+    - recipe: x11-apps
+  x-forward: true
+actions:
+  - name: run
+    script: 'xeyes'
+    help: 'run the project'
